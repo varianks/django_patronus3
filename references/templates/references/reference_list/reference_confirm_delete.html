@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    Delete Reference
+{% endblock title %}
+
+{% block content %}
+    <h1>Delete Reference</h1>
+    <form action="" method="POST">
+        <p>Are you sure want to delete this item <strong>{{ object }}</strong></p>
+        {% csrf_token %}
+        <p><input type="submit" value="Confirm"></p>
+    </form>
+
+
+{% endblock content %}

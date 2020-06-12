@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.postgres',
     'crispy_forms',
     'rest_framework',
-    'taggit_serializer',  
+    'taggit_serializer',
+    'references.apps.ReferencesConfig',
 ]
 
 MIDDLEWARE = [

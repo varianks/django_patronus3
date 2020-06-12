@@ -1,0 +1,39 @@
+{% extends 'blog/base.html' %}
+{% load blog_tags %}
+
+{% block title %}
+    Reference
+{% endblock title %}
+
+{% block content %}
+
+{% for reference in references %}
+    <h2>
+        <p>
+            {{reference.title}}
+            <br>
+        </p>
+
+    </h2>
+    <p>
+        {{reference.description}}
+    </p>
+        <p>
+            <a href="{{reference.link}}">
+                {{reference.link}}
+            </a>
+        </p>
+    <p class="date">Published {{reference.publish}}</p>
+    <p>
+        {% if reference.author == request.user %}
+
+        <a href="{% url 'references:reference_update' reference.id %}">Update Post</a>
+        <a href="{% url 'references:reference_delete' reference.id %}">Delete Post</a>
+
+        {% endif %}
+    </p>
+{% endfor %}
+
+{% include "pagination.html" with page=page_obj %}
+
+{% endblock content %}

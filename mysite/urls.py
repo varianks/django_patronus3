@@ -31,6 +31,8 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('api/', include('blog.api.urls', namespace='api')),
     path('api_auth/', include('rest_framework.urls')),
+    path('reference/', include('references.urls')),
+    path('api_reference/', include('references.api.urls', namespace='apireferences')),
 ]
 
 if settings.DEBUG:
